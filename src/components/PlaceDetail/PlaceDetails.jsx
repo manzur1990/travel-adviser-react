@@ -1,4 +1,4 @@
-const PlaceDetails = () => {
-    return <h1>PlaceDetails</h1>;
+const PlaceDetails = ({ place }) => {
+    return <h6>{place.name}</h6>;
 };
 export default PlaceDetails;
