@@ -26,3 +26,5 @@ const getPlacesData = async () => {
         console.log(error);
     }
 };
+
+export default getPlacesData;
