@@ -8,14 +8,24 @@ import {
     CardActions,
     Chip,
 } from '@material-ui/core';
-import LocationOnIcon from '@material-ui/core/LocationOn';
-import PhoneIcon from '@material-ui/core/Phone';
-import Rating from '@material-ui/lab/Raiting';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import PhoneIcon from '@material-ui/icons/Phone';
+// import Rating from '@material-ui/lab/Raiting';
 
 import useStyles from './styles';
 
 const PlaceDetails = ({ place }) => {
-    console.log(place);
-    return <h6>{place.name}</h6>;
+    return (
+        <Card elevation={6}>
+            <CardMedia
+                style={{ height: 350 }}
+                image={
+                    place.photo
+                        ? place.photo.images.large.url
+                        : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'
+                }
+            />
+        </Card>
+    );
 };
 export default PlaceDetails;
