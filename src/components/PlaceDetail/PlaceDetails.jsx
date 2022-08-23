@@ -15,6 +15,8 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import useStyles from './styles';
 
 const PlaceDetails = ({ place }) => {
+    const classes = useStyles();
+
     return (
         <Card elevation={6}>
             <CardMedia
@@ -24,7 +26,13 @@ const PlaceDetails = ({ place }) => {
                         ? place.photo.images.large.url
                         : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'
                 }
+                title={place.name}
             />
+            <CardContent>
+                <Typography gutterBottom varaint='h5'>
+                    {place.name}
+                </Typography>
+            </CardContent>
         </Card>
     );
 };
