@@ -32,6 +32,31 @@ const PlaceDetails = ({ place }) => {
                 <Typography gutterBottom varaint='h5'>
                     {place.name}
                 </Typography>
+                <Box display='flex' justifyContent='space-between'>
+                    <Typography variant='subtitle1'>Price</Typography>
+                    <Typography gutterBottom variant='subtitle1'>
+                        {place.price_level}
+                    </Typography>
+                    <Typography variant='subtitle1'>Ranking</Typography>
+                    <Typography gutterBottom variant='subtitle1'>
+                        {place.ranking}
+                    </Typography>
+                </Box>
+                {place?.awards?.map((award) => (
+                    <Box
+                        display='flex'
+                        justifyContent='space-between'
+                        alignItems='cdenter'>
+                        <img
+                            my={1}
+                            src={award.images.small}
+                            alt={award.display_name}
+                        />
+                        <Typography variant='subtitle2' color='textSecondary'>
+                            {award.display_name}
+                        </Typography>
+                    </Box>
+                ))}
             </CardContent>
         </Card>
     );
