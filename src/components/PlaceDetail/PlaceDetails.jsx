@@ -74,6 +74,15 @@ const PlaceDetails = ({ place }) => {
                         <LocationOnIcon /> {place.address}
                     </Typography>
                 )}
+                {place?.phone && (
+                    <Typography
+                        gutterBottom
+                        variant='body2'
+                        color='textSecondary'
+                        className={classes.spacing}>
+                        <PhoneIcon /> {place.phone}
+                    </Typography>
+                )}
             </CardContent>
         </Card>
     );
