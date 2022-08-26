@@ -65,6 +65,15 @@ const PlaceDetails = ({ place }) => {
                         className={classes.chip}
                     />
                 ))}
+                {place?.address && (
+                    <Typography
+                        gutterBottom
+                        variant='body2'
+                        color='textSecondary'
+                        className={classes.subtitle2}>
+                        <LocationOnIcon /> {place.address}
+                    </Typography>
+                )}
             </CardContent>
         </Card>
     );
