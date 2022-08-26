@@ -57,6 +57,14 @@ const PlaceDetails = ({ place }) => {
                         </Typography>
                     </Box>
                 ))}
+                {place?.cuisine?.map(({ name }) => (
+                    <Chip
+                        key={name}
+                        size='small'
+                        label={name}
+                        className={classes.chip}
+                    />
+                ))}
             </CardContent>
         </Card>
     );
