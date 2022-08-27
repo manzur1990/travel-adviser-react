@@ -83,6 +83,12 @@ const PlaceDetails = ({ place }) => {
                         <PhoneIcon /> {place.phone}
                     </Typography>
                 )}
+                <CardActions>
+                    <Button
+                        size='small'
+                        color='primary'
+                        onClick={window.open(place.web_url, '_blank')}></Button>
+                </CardActions>
             </CardContent>
         </Card>
     );
