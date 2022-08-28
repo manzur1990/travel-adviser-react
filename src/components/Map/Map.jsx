@@ -5,7 +5,7 @@ import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles';
 
-const Map = ({ setCoordinates, setBounds, coordinates }) => {
+const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
     const matches = useMediaQuery('(min-width:600px)');
     const classes = useStyles();
 
@@ -24,7 +24,15 @@ const Map = ({ setCoordinates, setBounds, coordinates }) => {
                     setCoordinates({ lat: e.center.lat, lng: e.center.lng });
                     setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
                 }}
-                onChildClick={''}></GoogleMapReact>
+                onChildClick={''}>
+                {places?.map((place, i) => (
+                    <div
+                        className={classes.markerContainer}
+                        lat={Number(place.lattitude)}
+                        lng={Number(place.longitude)}
+                        key={i}></div>
+                ))}
+            </GoogleMapReact>
         </div>
     );
 };
